@@ -1,0 +1,23 @@
+name: Deploy
+
+# Permission to allow the action to write tags and releases to the repository.
+permissions:
+  contents: write
+
+on:
+  pull_request:
+    branches: [main, master]
+    types: [closed]
+
+jobs:
+  deploy:
+    name: Deploy
+    if: github.event.pull_request.merged == true
+    uses: Electrolux-D2C/electrolux-actions/.github/workflows/deploy.yml@main
+    secrets: inherit
+
+  pos-deploy:
+    name: Pos-Deploy
+    needs: deploy
+    uses: Electrolux-D2C/electrolux-actions/.github/workflows/pos-deploy.yml@main
+    secrets: inherit

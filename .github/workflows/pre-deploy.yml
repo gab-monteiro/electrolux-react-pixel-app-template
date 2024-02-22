@@ -1,0 +1,12 @@
+name: Pre-Deploy
+
+on:
+  push:
+    branches:
+      - release/**
+
+jobs:
+  pre-deploy:
+    name: Pre-Deploy
+    uses: Electrolux-D2C/electrolux-actions/.github/workflows/pre-deploy.yml@main
+    secrets: inherit

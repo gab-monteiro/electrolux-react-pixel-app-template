@@ -1,0 +1,44 @@
+{
+  "name": "[name]-pixel-app",
+  "vendor": "electrolux",
+  "version": "0.1.0",
+  "title": "Electrolux [Name Pixel App]",
+  "description": "Insert a small description of your app",
+  "builders": {
+    "pixel": "0.x",
+    "docs": "0.x"
+  },
+  "availableCountries": [
+    "*"
+  ],
+  "dependencies": {
+    "vtex.pixel-interfaces": "1.x"
+  },
+  "settingsSchema": {
+    "title": "Electrolux [Name Pixel App]",
+    "description": "(Optional) Insert a small description of your app",
+    "type": "object",
+    "properties": {
+      "active": {
+        "title": "Active",
+        "description": "Active and desactive the script.",
+        "type": "boolean",
+        "default": false
+      },
+      "id": {
+        "title": "[Name Pixel App] ID",
+        "description": "Enter the [Name Pixel App] ID",
+        "type": "string"
+      }
+    }
+  },
+  "registries": [
+    "smartcheckout"
+  ],
+  "policies": [
+    {
+      "name": "pixel"
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
